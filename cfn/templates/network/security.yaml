@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Simple security'
+
+Parameters:
+  VpcId:
+    Description: VPC Id
+    Type: AWS::EC2::VPC::Id
+
+Resources:
+  HttpsSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Sample HTTPS
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: '0.0.0.0/0'
+
+Outputs:
+  HttpsSgId:
+    Description: Id of Sample HTTPS Security Group
+    Value: !GetAtt HttpsSecurityGroup.GroupId

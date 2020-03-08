@@ -1,0 +1,3 @@
+template_path: network/security.yaml
+parameters:
+  VpcId: !stack_output website/vpc.yaml::VpcId

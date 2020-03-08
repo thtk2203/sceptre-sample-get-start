@@ -1,0 +1,5 @@
+template_path: network/subnet.yaml
+parameters:
+  VpcId: !stack_output website/vpc.yaml::VpcId
+  PrivateSubnet1CIDR: {{ var.network.private_subnet1_cidr }}
+  PrivateSubnet2CIDR: {{ var.network.private_subnet2_cidr }}

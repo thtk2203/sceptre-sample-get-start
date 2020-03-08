@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Simple pub/sub'
+
+Resources:
+  SampleNotification:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: Sample
+
+Outputs:
+  SampleNotificationArn:
+    Description: Arn of Sample SNS
+    Value: !Ref SampleNotification
+
+  SampleNotificationName:
+    Description: Name of Sample SNS
+    Value: !GetAtt SampleNotification.TopicName

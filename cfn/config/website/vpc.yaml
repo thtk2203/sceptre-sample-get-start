@@ -1,0 +1,3 @@
+template_path: network/vpc.yaml
+parameters:
+  VpcCIDR: {{ var.network.vpc_cidr }}
